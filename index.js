@@ -29,7 +29,8 @@ app.post('/chargeForCookie', async (request, response) => {
       idempotencyKey: crypto.randomBytes(12).toString('hex'),
       sourceId: requestBody.nonce,
       amountMoney: {
-        ...createOrderResponse.result.order.totalMoney,
+        amount: 100,
+        currency: "CAD"
       },
       orderId: createOrderResponse.result.order.id,
       autocomplete: true,
